@@ -1,0 +1,66 @@
+### Get All
+http://localhost:9000/api/clientes
+
+### Get One
+http://localhost:9000/api/clientes/1
+
+### Delete
+DELETE http://localhost:9000/api/clientes
+Content-Type: application/json
+
+{
+  "fiIdCliente": 4
+}
+
+### Create
+POST http://localhost:9000/api/clientes
+Content-Type: application/json
+
+{ 
+  "fiIdCliente": 5,
+  "fcNombreCliente": "Steve Jobs",
+  "fcRazonSocial": "Apple Inc",
+  "fcDireccion": "av. siempre viva",
+  "fcColonia": "Cuajimalpa"
+}
+
+### Get All Usuarios
+http://localhost:9000/api/usuarios
+
+### Create Usuario
+POST http://localhost:9000/api/usuarios
+Content-Type: application/json
+
+{
+  "fiIdUsuario": 0,
+  "fcNombre": "Elmer Omero",
+  "fcUsuario": "elmeromero@gmail.com",
+  "fcPassword": "123456",
+  "fbEstatus": 1
+}
+
+### Login
+http://localhost:9000/api/auth/login
+Content-Type: application/json
+
+{   
+  "fcUsuario": "elmeromero@gmail.com",
+  "fcPassword": "123456"
+}
+
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaUlkVXN1YXJpbyI6MTQsImZjVXN1YXJpbyI6ImVsbWVyb21lcm9AZ21haWwuY29tIiwiZmNQYXNzd29yZCI6IiQyYiQwNCRXbDIuZGNoUEVJSlk2WnVWZ3d6T2MuRXNRZi9SUThpYjZHRmN0ak8vMlp0dmNQTnRHdncuLiIsImlhdCI6MTcwNTgwNzk0NX0.MNxNfUDz-jURRrSbQo6a7iMrqjfdLwd3cpj3wiKBSo8
+
+### Token
+
+POST http://localhost:9000/api/usuarios
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+  "fiIdUsuario": 0,
+  "fcNombre": "Elmer Omero",
+  "fcUsuario": "elmeromero@gmail.com",
+  "fcPassword": "123456",
+  "fbEstatus": 1
+}
+  
